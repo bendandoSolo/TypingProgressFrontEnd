@@ -20,6 +20,7 @@ export default function Home() {
   };
 
   return (
+    <>
     <main className={styles.main}>
        <ul>
           <li>use MUI</li>
@@ -45,5 +46,6 @@ export default function Home() {
         </ul>
       </div>
     </main>
+    </>
   );
 }
