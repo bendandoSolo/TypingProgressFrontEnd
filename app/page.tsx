@@ -1,12 +1,16 @@
 "use client"
 
 import styles from "./page.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+
+//we should not be importing and exporting this from layout!
+import { DataContext } from "./_components/DataContext";
 
 export default function Home() {
 
   const [data, setData] = useState([]);
-
+  const contextData = useContext(DataContext);
+  
   useEffect(() => {
     data.length === 0 && getAll();
   }, [data])
