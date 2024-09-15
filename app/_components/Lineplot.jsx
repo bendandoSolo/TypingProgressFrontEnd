@@ -13,7 +13,7 @@ export default function LinePlot({
   const y = d3.scaleLinear(d3.extent(data), [height - marginBottom, marginTop]);
   const line = d3.line((d, i) => x(i), y);
   return (
-    <div style={width: '100%'}>
+    <div style={{width: '100%'}}>
     <p>Testing drawing me{JSON.stringify(data)}</p>
     <svg width={width} height={height}>
       <path fill="none" stroke="currentColor" strokeWidth="1.5" d={line(data)} />
