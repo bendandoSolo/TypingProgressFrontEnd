@@ -3,7 +3,7 @@
 import { createContext, useContext } from 'react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+//import "./globals.css";
 import BasicMenu from "./_components/Menu";
 import { DataProvider } from "./_components/DataContext";
 
