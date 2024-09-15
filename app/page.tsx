@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { useEffect, useState, useContext } from "react";
 import LinePlot from './_components/LinePlot';
 import ScatterPlot from './_components/ScatterPlot';
+
 //we should not be importing and exporting this from layout!
 import { DataContext } from "./_components/DataContext";
 
@@ -29,7 +30,7 @@ export default function Home() {
     <main className={styles.main}>
       <h1>D3 Tests</h1>
       <hr style={{ color: "#000000", width: '100%'}} />
-      <ScatterPlot data={data} />
+      <ScatterPlot data={data} valueToGraph="wpm" title="all test WPM"/>
 
       <hr style={{ color: "#000000", width: '100%'}} />
 

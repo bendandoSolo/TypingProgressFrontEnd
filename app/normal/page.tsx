@@ -4,6 +4,7 @@ import React, {useContext} from 'react';
 import { DataContext } from '../_components/DataContext';
 import LinePlot from '../_components/LinePlot';
 import ScatterPlot from '../_components/ScatterPlot';
+import WPMvsAccuracyCorrelation from '../_components/WPMvsAccuracyCorrelation';
 
 const NormalPage = () => {
 
@@ -17,6 +18,7 @@ const NormalPage = () => {
             {/* <LinePlot data={normalData} /> */}
             <ScatterPlot data={normalData} title="normal data" valueToGraph="wpm"/>
             <ScatterPlot data={normalData} title="normal data" valueToGraph="accuracy" color="#ff00ff" reverse={true}/>
+            {/* <WPMvsAccuracyCorrelation data={normalData} /> */}
             <p>{JSON.stringify(normalData)}</p>
         </>
     );
