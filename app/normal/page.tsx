@@ -5,6 +5,7 @@ import { DataContext } from '../_components/DataContext';
 import LinePlot from '../_components/LinePlot';
 import ScatterPlot from '../_components/ScatterPlot';
 import WPMvsAccuracyCorrelation from '../_components/WPMvsAccuracyCorrelation';
+import AverageValues from '../_components/AverageValues';
 
 const NormalPage = () => {
 
@@ -17,6 +18,7 @@ const NormalPage = () => {
             <p>loading lineplot not working </p>
             {/* <LinePlot data={normalData} /> */}
             <ScatterPlot data={normalData} title="normal data" valueToGraph="wpm"/>
+            <AverageValues dataArray={[]} />
             <ScatterPlot data={normalData} title="normal data" valueToGraph="accuracy" color="#ff00ff" reverse={true}/>
             {/* <WPMvsAccuracyCorrelation data={normalData} /> */}
             <p>{JSON.stringify(normalData)}</p>

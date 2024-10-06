@@ -2,7 +2,7 @@ import * as ss from 'simple-statistics'
 
 import React from 'react';
 
-const WPMvsAccuracyCorrelation = ({data}) => {
+const WPMvsAccuracyCorrelation = ({data : any}) => {
 
 
 
