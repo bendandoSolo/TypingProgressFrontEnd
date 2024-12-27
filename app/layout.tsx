@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 //import "./globals.css";
 import BasicMenu from "./_components/Menu";
 import { DataProvider } from "./_components/DataContext";
+import VeryBasicMenu from '@/_components/BasicMenu';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <BasicMenu />
+        {/* <BasicMenu /> */}
+        <VeryBasicMenu />
         <DataProvider>
         {children}
         </DataProvider>

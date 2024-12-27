@@ -6,9 +6,26 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 
-export default function AccordionDemo() {
+type AccordionData = {
+  title: string;
+  content: string;
+};
+
+interface AccordionViewProps {
+  data?: AccordionData[]; // Optional array of objects with title and content
+}
+
+
+export default function AccordionView({ data }: AccordionViewProps) {
   return (
     <div>
+      <p>{!!data && JSON.stringify(data)}</p>
+      
+
+
+
+      <p>We will map the data and see what happens...</p>
+
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
