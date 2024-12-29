@@ -4,8 +4,6 @@ import styles from "./page.module.css";
 import { useEffect, useState, useContext } from "react";
 import LinePlot from './_components/LinePlot';
 import ScatterPlot from './_components/ScatterPlot';
-//nb: delete this demo asap.
-import AccordionDemo from './_components/Archive/AccordionDemo';
 
 //we should not be importing and exporting this from layout!
 import { DataContext } from "./_components/DataContext";
@@ -29,7 +27,6 @@ export default function Home() {
 
   return (
     <>
-    <AccordionDemo/>
     <main className={styles.main}>
       <h1>D3 Tests</h1>
       <hr style={{ color: "#000000", width: '100%'}} />
@@ -38,10 +35,8 @@ export default function Home() {
       <hr style={{ color: "#000000", width: '100%'}} />
 
        <ul>
-          <li>use MUI</li>
-          <li>Separate out fetching data, to services, make it auto fetch, consider react query</li>
-          <li>Hide and Show data sections with accordion</li>
-          <li>Graph results</li>
+          <li>WIP Hide and Show data sections with accordion</li>
+          <li>WIP Graph results</li>
           <li>Use a table to display data</li>
           <li>Basic stats analysis over data</li>
         </ul>
@@ -49,11 +44,6 @@ export default function Home() {
       <br />
       <div className={styles.description}>
        
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <button onClick={getAll}>Connect to API</button>
         <ul>
           {data.map((item: any) => (
             <li key={item.id}>{JSON.stringify(item)}</li>

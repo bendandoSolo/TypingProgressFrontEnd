@@ -6,27 +6,33 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 
-type AccordionData = {
-  title: string;
-  content: string;
-};
+import { AccordionData, AccordionViewProps } from '@/_types/AccordionData';
 
-interface AccordionViewProps {
-  data?: AccordionData[]; // Optional array of objects with title and content
-}
 
 
 export default function AccordionView({ data }: AccordionViewProps) {
   return (
     <div>
       <p>{!!data && JSON.stringify(data)}</p>
-      
 
+      {!!data && data.map((item, index) => 
+           <Accordion key={index}>
+           <AccordionSummary
+             expandIcon={<ExpandMoreIcon />}
+             aria-controls={`panel${index}-content`}
+             id={`panel${index}-header`}
+           >
+             {item.title}
+           </AccordionSummary>
+           <AccordionDetails>
+             {item.content}
+           </AccordionDetails>
+         </Accordion> 
+      )}
+         
+       
 
-
-      <p>We will map the data and see what happens...</p>
-
-      <Accordion>
+      {/* <Accordion >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
@@ -68,7 +74,7 @@ export default function AccordionView({ data }: AccordionViewProps) {
           <Button>Cancel</Button>
           <Button>Agree</Button>
         </AccordionActions>
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 }

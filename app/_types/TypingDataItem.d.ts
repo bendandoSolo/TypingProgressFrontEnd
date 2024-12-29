@@ -1,4 +1,4 @@
-type TypyingDataItem = {
+type TypingDataItem = {
     id?: number; 
     date: string; 
     type: string; 
