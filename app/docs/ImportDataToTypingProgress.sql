@@ -7,13 +7,13 @@ DELETE FROM Typing2024
 DELETE FROM Typing2024_NoId
 
 BULK INSERT Typing2024_NoId
-FROM 'C:\Users\benda\Desktop\Typing CSV\Typing2024.csv'
+FROM 'C:\Users\benda\Desktop\Progress\Typing CSV\Typing2024.csv'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
     FIRSTROW = 2,
     KEEPNULLS,
-    ERRORFILE = 'C:\Users\benda\Desktop\Typing CSV\errorfile.txt',
+    ERRORFILE = 'C:\Users\benda\Desktop\Progress\Typing CSV\errorfile.txt',
     MAXERRORS = 1000
 );
 
