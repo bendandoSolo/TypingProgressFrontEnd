@@ -78,7 +78,7 @@ const MultiAxisChart = (data: any) => {
 
   return (
     <>
-      <canvas id="myChart1" ref={lineChart1} style={{ marginBottom: '124px' }}></canvas>
+      <canvas id="myChart1" ref={lineChart1}></canvas>
     </>
   );
 };

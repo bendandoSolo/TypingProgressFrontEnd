@@ -4,10 +4,12 @@ import React, { useContext } from 'react';
 import { DataContext } from '../_components/DataContext';
 import LinePlot from '../_components/LinePlot';
 import ScatterPlot from '../_components/ScatterPlot';
-import WPMvsAccuracyCorrelation from '../_components/WPMvsAccuracyCorrelation';
 import AverageValues from '../_components/AverageValues';
 import LineChart1 from '../_components/LineChart1';
 import MultiAxisChart from '../_components/MultiAxisChart';
+import LargeSpace from '../_components/layout/LargeSpace';
+
+import WPMvsAccuracyCorrelation from '../_components/statitcs/WPMvsAccuracyCorrelation';
 
 const NormalPage = ({}) => {
   const typingData = useContext(DataContext);
@@ -19,6 +21,8 @@ const NormalPage = ({}) => {
       <h1>TODO: Be more accurate as data shows leads to more speed!</h1>
 
       <MultiAxisChart data={normalData} />
+      <WPMvsAccuracyCorrelation data={normalData} />
+      <LargeSpace />
       {/* TODO: ignore or fix loading D$ lineplot not working  */}
       {/* <LinePlot data={normalData} /> */}
       <LineChart1 data={normalData} />
