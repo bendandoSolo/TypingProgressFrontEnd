@@ -1,38 +1,39 @@
 'use client';
 
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { DataContext } from '../_components/DataContext';
 import LinePlot from '../_components/LinePlot';
 import ScatterPlot from '../_components/ScatterPlot';
 import WPMvsAccuracyCorrelation from '../_components/WPMvsAccuracyCorrelation';
 import AverageValues from '../_components/AverageValues';
+import LineChart1 from '../_components/LineChart1';
 
-const NormalPage = () => {
+const NormalPage = ({}) => {
+  const typingData = useContext(DataContext);
 
-    const typingData = useContext(DataContext);
+  const normalData = typingData.filter((data: any) => data.type.trim().toLowerCase() === 'normal');
 
-    const normalData = typingData.filter((data: any) => data.type.trim().toLowerCase() === 'normal');
+  return (
+    <>
+      <h2>
+        TODO : alter accordion to pass components rather than strings and hide old d3 graphs, less easy to get started
+        than chart.js
+      </h2>
 
-    return (
-        <>
-            <p>loading lineplot not working </p>
-            {/* <LinePlot data={normalData} /> */}
-            <ScatterPlot data={normalData} title="normal data" valueToGraph="wpm"/>
-            <AverageValues dataArray={[]} />
-            <ScatterPlot data={normalData} title="normal data" valueToGraph="accuracy" color="#ff00ff" reverse={true}/>
-            {/* <WPMvsAccuracyCorrelation data={normalData} /> */}
-            <p>{JSON.stringify(normalData)}</p>
-        </>
-    );
+      {/* TODO: ignore or fix loading D$ lineplot not working  */}
+      {/* <LinePlot data={normalData} /> */}
+      <LineChart1 />
+      {/* <ScatterPlot data={normalData} title="normal data" valueToGraph="wpm" />
+      <AverageValues dataArray={[]} />
+      <ScatterPlot data={normalData} title="normal data" valueToGraph="accuracy" color="#ff00ff" reverse={true} /> */}
+      {/* <WPMvsAccuracyCorrelation data={normalData} /> */}
+      <p>{JSON.stringify(normalData)}</p>
+    </>
+  );
 };
 
-
 const DataDispayer = (data: any) => {
-    return (
-       <p>{JSON.stringify(data)}</p>
-    );
-}
-
-
+  return <p>{JSON.stringify(data)}</p>;
+};
 
 export default NormalPage;
