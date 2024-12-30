@@ -2,7 +2,7 @@
 import { useRef, useEffect } from 'react';
 import Chart from 'chart.js/auto';
 
-const LineChart1 = (data: any) => {
+const MultiAxisChart = (data: any) => {
   const lineChart1 = useRef(null);
   let chart: any = null;
 
@@ -28,6 +28,7 @@ const LineChart1 = (data: any) => {
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1,
+                yAxisID: 'y',
               },
               {
                 label: 'accuracy',
@@ -35,14 +36,38 @@ const LineChart1 = (data: any) => {
                 fill: false,
                 borderColor: 'rgb(255, 0, 192)',
                 tension: 0.1,
+                yAxisID: 'y1',
               },
             ],
           },
           options: {
+            responsive: true,
+            interaction: {
+              mode: 'index',
+              intersect: false,
+            },
+            //stacked: false,
+            plugins: {
+              title: {
+                display: true,
+                text: 'Correlation between WPM and Accuracy',
+              },
+            },
             scales: {
               y: {
-                // beginAtZero: true,
-                // min: 60,
+                type: 'linear',
+                display: true,
+                position: 'left',
+              },
+              y1: {
+                type: 'linear',
+                display: true,
+                position: 'right',
+
+                // grid line settings
+                grid: {
+                  drawOnChartArea: false, // only want the grid lines for one axis to show up
+                },
               },
             },
           },
@@ -53,10 +78,9 @@ const LineChart1 = (data: any) => {
 
   return (
     <>
-      <canvas id="myChart1" ref={lineChart1}></canvas>
-      <p>{JSON.stringify(data)}</p>
+      <canvas id="myChart1" ref={lineChart1} style={{ marginBottom: '124px' }}></canvas>
     </>
   );
 };
 
-export default LineChart1;
+export default MultiAxisChart;
