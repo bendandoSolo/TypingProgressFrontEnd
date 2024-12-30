@@ -8,6 +8,8 @@ import { DataContext } from '../_components/DataContext';
 // import AverageValues from '../_components/AverageValues';
 import LineChart1 from '../_components/LineChart1';
 import MultiAxisChart from '../_components/MultiAxisChart';
+import MovingAveragesLineChart from '../_components/MovingAveragesLineChart';
+import MovingAveragesLineChart2 from '../_components/MovingAveragesLineChart2';
 import LargeSpace from '../_components/layout/LargeSpace';
 import MeanMedianMode from '../_components/statistics/MeanMedianMode';
 
@@ -21,6 +23,9 @@ const NormalPage = ({}) => {
   return (
     <div style={{ padding: '20px 120px' }}>
       <h1>TODO: Be more accurate as data shows leads to more speed!</h1>
+
+      <MovingAveragesLineChart data={normalData} />
+      <MovingAveragesLineChart2 data={normalData} />
 
       <MultiAxisChart data={normalData} />
       <div
