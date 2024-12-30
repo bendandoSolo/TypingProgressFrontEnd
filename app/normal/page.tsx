@@ -22,7 +22,7 @@ const NormalPage = ({}) => {
 
       {/* TODO: ignore or fix loading D$ lineplot not working  */}
       {/* <LinePlot data={normalData} /> */}
-      <LineChart1 />
+      <LineChart1 data={normalData} />
       {/* <ScatterPlot data={normalData} title="normal data" valueToGraph="wpm" />
       <AverageValues dataArray={[]} />
       <ScatterPlot data={normalData} title="normal data" valueToGraph="accuracy" color="#ff00ff" reverse={true} /> */}
