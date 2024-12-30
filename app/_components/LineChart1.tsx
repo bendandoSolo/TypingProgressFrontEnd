@@ -4,10 +4,14 @@ import Chart from 'chart.js/auto';
 
 const LineChart1 = () => {
   const lineChart1 = useRef(null);
+  let chart: any = null;
 
   useEffect(() => {
     if (lineChart1.current) {
-      new Chart(lineChart1.current, {
+      if (chart) {
+        chart.destroy();
+      }
+      chart = new Chart(lineChart1.current, {
         type: 'line',
         data: {
           labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Red'],
@@ -28,14 +32,6 @@ const LineChart1 = () => {
             },
           ],
         },
-        //   datasets: [
-        //     {
-        //       label: '# of Votes',
-        //       data: [12, 19, 3, 5, 2, 3],
-        //       borderWidth: 1,
-        //     },
-        //   ],
-        //},
         options: {
           scales: {
             y: {
