@@ -2,14 +2,16 @@
 
 import React, { useContext } from 'react';
 import { DataContext } from '../_components/DataContext';
-import LinePlot from '../_components/LinePlot';
-import ScatterPlot from '../_components/ScatterPlot';
-import AverageValues from '../_components/AverageValues';
+// D3 old graphs
+// import LinePlot from '../_components/LinePlot';
+// import ScatterPlot from '../_components/ScatterPlot';
+// import AverageValues from '../_components/AverageValues';
 import LineChart1 from '../_components/LineChart1';
 import MultiAxisChart from '../_components/MultiAxisChart';
 import LargeSpace from '../_components/layout/LargeSpace';
+import MeanMedianMode from '../_components/statistics/MeanMedianMode';
 
-import WPMvsAccuracyCorrelation from '../_components/statitcs/WPMvsAccuracyCorrelation';
+import WPMvsAccuracyCorrelation from '../_components/statistics/WPMvsAccuracyCorrelation';
 
 const NormalPage = ({}) => {
   const typingData = useContext(DataContext);
@@ -21,7 +23,22 @@ const NormalPage = ({}) => {
       <h1>TODO: Be more accurate as data shows leads to more speed!</h1>
 
       <MultiAxisChart data={normalData} />
-      <WPMvsAccuracyCorrelation data={normalData} />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row', // default direction is row, but good to be explicit
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          gap: '1rem',
+          border: '2px solid #ccc',
+          padding: '10px',
+          margin: '20px',
+        }}
+      >
+        <WPMvsAccuracyCorrelation data={normalData} />
+        <MeanMedianMode data={normalData} field="wpm" />
+        <MeanMedianMode data={normalData} field="accuracy" />
+      </div>
       <LargeSpace />
       {/* TODO: ignore or fix loading D$ lineplot not working  */}
       {/* <LinePlot data={normalData} /> */}
